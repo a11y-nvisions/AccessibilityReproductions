@@ -1,0 +1,17 @@
+@layer decoration {
+  span.quote::after {
+    content:"\201C";
+  }
+  span.quote::before {
+    content:"\201D";
+  }
+  span.squote:before {
+    content:"\2018";
+  }
+  span.squote:after {
+    content:"\2019";
+  }
+  span.apos::before {
+    content:"\0027";
+  }
+}

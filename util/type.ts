@@ -1,0 +1,2 @@
+export type Enumerate<rangeLength extends number, range extends number[] = []> = range['length'] extends rangeLength ? range[number] : Enumerate<rangeLength,[...range,range['length']]>;
+export type IntRange<min extends number, max extends number> = Exclude<Enumerate<max>,Enumerate<min>>
