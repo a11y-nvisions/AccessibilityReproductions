@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { ReactNode, useEffect } from "react";
 import RoutingTabLayout from "./_layout";
 
-function content_index () {
+function Content_index () {
   const router = useRouter();
   useEffect(()=>{
     router.push('tab/apple')
@@ -13,6 +13,6 @@ function content_index () {
   )
 }
 
-content_index.getLayout = (page:ReactNode)=> <RoutingTabLayout>{page}</RoutingTabLayout>
+Content_index.getLayout = (page:ReactNode)=> <RoutingTabLayout>{page}</RoutingTabLayout>
 
-export default content_index;
+export default Content_index;
