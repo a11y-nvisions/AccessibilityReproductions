@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
-import React,{useState,useEffect,useRef} from "react";
+import Router, { useRouter } from "next/router";
+import React,{useState,useEffect,useRef, ReactElement, ReactNode} from "react";
 export interface RoutingTabs {
   path : string;
   label : string;
@@ -15,6 +15,7 @@ export default function RoutingTabController ({tabInfo,orientation='horizontal',
   const [isTrusted,setTrusted] = useState(false);
   let [first,last] = [0,tabInfo.length-1];
   const tabRouter = useRouter();
+  const cpath = tabRouter.pathname;
   const selectTab = (idx:number) => {
     setSelectedIndex(idx < first ? last : (idx > last ? first : idx));
   }
@@ -65,7 +66,7 @@ export default function RoutingTabController ({tabInfo,orientation='horizontal',
           }} onClick={()=>{
             setSelectedIndex(idx);
             tabRouter.push(info.path)
-          }} className={"tab-item"} role={'tab'} ref={idx === getSelectedIndex ? tabNavigatedRef : null } aria-selected={ tabRouter.pathname.includes(info.path) } tabIndex={tabRouter.pathname.includes(info.path) ? 0 : -1} key={idx}>{info.label}</div>
+          }} className={"tab-item"} role={'tab'} ref={idx === getSelectedIndex ? tabNavigatedRef : null } aria-selected={ cpath.includes(info.path) } tabIndex={cpath.includes(info.path) ? 0 : -1} key={idx}>{info.label}</div>
       })} 
       </div>)
 }

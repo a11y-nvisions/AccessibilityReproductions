@@ -15,7 +15,7 @@ const RegisteredPages:PageRegisterInit[] = [
     path:"/tab-layout", label: "The tab layout",
   },
   {
-    path:"/routing-tab-layout/apple", label: "The tab-layout with routing",
+    path:"/tab/", label: "The tab-layout with routing",
   }
 ]
 
