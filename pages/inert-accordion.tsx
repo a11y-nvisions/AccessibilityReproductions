@@ -7,11 +7,10 @@ const Page_Accordion:FC<{[key:string]:any}> = ({title})=> {
   return (
     <>
       <Head>
-        <title>Home - Accessibility Reproductions</title>
-        <meta name="description" content="Accessibility Reproductions for reporting bugs and issues" />
+        <title>How to utilize inert attrubte for animation - Accessibility Reproductions</title>
       </Head>
       <article>
-        <h2>Case : make accordion with giving animation for when appearing & disappearing with inert attribute</h2>
+        <h2>How to utilize inert attribute for animation</h2>
         <p>This reproduce is for easy implementation method of <SQuote>on appear</SQuote>, <SQuote>on disappear</SQuote> animation with using <SQuote>inert</SQuote> attribute in the web.</p>
         <section>
           <h3>Background</h3>

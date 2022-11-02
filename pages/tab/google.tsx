@@ -1,10 +1,14 @@
+import Head from "next/head";
 import { ReactNode } from "react";
 import RoutingTabLayout from "./_layout";
 
 function Content_google () {
   return (
     <>
-    <p>Google is a name of search enine, service, and company. Google is my favorite search engine!</p>
+    <Head>
+      <title>Google Tab - Accessibility Reproductions</title>
+    </Head>
+    <p>Google is a name of search engine, service, and company. Google is my favorite search engine!</p>
     </>
   )
 }

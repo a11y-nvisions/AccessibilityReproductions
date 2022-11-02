@@ -16,8 +16,6 @@ export default function App({ Component, pageProps }:AppPropWithLayout ) {
   return (
     <>
       <Script src="https://kit.fontawesome.com/739edf4b29.js" crossOrigin="anonymous"></Script>
-      <Head>
-      </Head>
       <MainLayout>
         {getLayout(<Component {...pageProps} />)}
       </MainLayout>

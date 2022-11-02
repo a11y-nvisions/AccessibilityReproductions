@@ -27,9 +27,6 @@ export default function MainLayout ({children}:{children:React.ReactElement|Reac
   },[browserCheck,currentBrowser,detect])
   return (
     <>
-      <Head>
-        <title>Accessibility Reproductions</title>
-      </Head>
       <div id="root">
         <header><button id="btn_hamburger" aria-label="Index Menu" onClick={showMenu}><i className="fa-solid fa-bars"></i></button><h1>Accessibility Issue Reproductions</h1></header>
         <div className='notice-wrapper'>

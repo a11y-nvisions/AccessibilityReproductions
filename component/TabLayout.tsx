@@ -74,9 +74,11 @@ const TabLayout:FC<TabLayoutProps> = ({defaultSelected,tabControlInfo})=> {
               case "Home":
                 firstTab();
                 setTrusteed(evt.isTrusted);
+                break;
               case "End":
                 lastTab();
                 setTrusteed(evt.isTrusted);
+                break;
             }
           }} onClick={()=>{setIndexToSelected(idx);}} isSelected= { idx === getSelectedIndex } 
           label={el.label} />;

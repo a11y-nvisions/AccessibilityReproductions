@@ -1,7 +1,7 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { ReactNode, useEffect } from "react";
 import RoutingTabLayout from "./_layout";
-
 function Content_index () {
   const router = useRouter();
   useEffect(()=>{
@@ -9,6 +9,9 @@ function Content_index () {
   },[router])
   return (
     <>
+      <Head>
+        <title>Loading... - Accessibility Reproductions</title>
+      </Head>
     </>
   )
 }

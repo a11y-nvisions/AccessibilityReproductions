@@ -1,9 +1,13 @@
+import Head from "next/head";
 import { ReactNode } from "react";
 import RoutingTabLayout from "./_layout";
 
 function Content_apple () {
   return (
     <>
+    <Head>
+      <title>Apple Tab - Accessibility Reproductions</title>
+    </Head>
     <p>Apple is a name of delicious fruit! And Also it&apos;s a name of company that famous for iPhone!</p>
     </>
   )
