@@ -63,7 +63,7 @@ export default function MainLayout ({children}:{children:React.ReactElement|Reac
                     }
                   </ul>
               </nav>
-              <button id="nav_close" type="button" aria-label='Close Page Index' onClick={hideMenu}>X</button>
+              <button id="nav_close" type="button" aria-label={'Close Page Index Menu'} onClick={hideMenu}>X</button>
             </form>
           </dialog>
           <footer>&copy; NVISIONS</footer>
