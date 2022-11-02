@@ -8,7 +8,7 @@ function Content_Microsoft () {
     <Head>
       <title>Microsoft Tab - Accessibility Reproductions</title>
     </Head>
-    <p>Microsoft! I think cool company that make a stable operating system! I was liked innovational things. So, I've been crazy them, and I still like them. But, I think compnay that make the most-stable OS is a Microsoft</p>
+    <p>Microsoft! I think cool company that make a stable operating system! I was liked innovational things. So, I&aps;ve been crazy them, and I still like them. But, I think compnay that make the most-stable OS is a Microsoft</p>
     </>
   )
 }
