@@ -1,0 +1,12 @@
+{
+  "title":"A Problem that VoiceOver unnavigatable real-time rendering contents",
+  "main_title":"A Problem that VoiceOver unnavigatable real-time rendering contents",
+  "introduce":"We can find Live Regions easily like Timers, Counters, and Clocks and D-Day while exploring webpages. By the way, sometimes these make troubles with iOS VoiceOver exploring.",
+  "h3_try_experience":"Try experience this yourself",
+  "try_experience_paragraph1":"Try pass below using an swipe navigation gesture of VoiceOver on iPhone and iPad. You won't be able to pass there.",
+  "try_experience_paragraph2":"And then navigate a next clock section. maybe you're possible to passing there with VoiceOver.",
+  "h3_conclusion":"Conclusion",
+  "conclusion_paragraph1" : "It's surprising. What are you think why can VoiceOver navigate and pass this? A hint is between a fisrt clock and the last clock, there's one difference. That difference is how to update data.",
+  "conclusion_paragraph2" : "The last clock only updates text nodes that are inside of the element. It means this clock doesn't replace a whole element with a new element for updating new data. iOS VoiceOver cannot explore elements that have been quickly and repeatedly added and removed., and, VoiceOver will recognize a last-navigated element as the last element of the current screen like a fool :)",
+  "conclusion_paragraph3" : "Do not replace whole elements for updating data. When updating data, please update a text inside the element only for making a stable user experience for your websites and web applications."
+}

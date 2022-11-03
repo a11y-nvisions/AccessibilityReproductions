@@ -1,0 +1,13 @@
+{
+  "title":"애니메이션 효과를 위한 inert 속성 활용 방법",
+  "main_title":"애니메이션 효과를 위한 inert 속성 활용 방법",
+  "introduce":"이 페이지는 웹에서 'inert' 속성을 사용하여 표시 및 숨김 애니메이션을 쉽게 제공할 수 있는 방법을 제공합니다.",
+  "h3_background":"배경",
+  "background_paragraph1":"CSS 속성, display:none;이나 visibility:hidden;은 애니메이션 효과를 주기에 좋지 않습니다. 아시다시피, 이 사례들은 부드러운 애니메이션을 보여주지 못합니다. 가까운 과거까지만 해도, 나타남/사라짐 애니메이션 효과를 주려면 매우 복잡한 DOM 이벤트를 사용해야만 했습니다. 그런데, 최근에 대부분의 브라우저에서 <dialog> 태그와 inert 속성 지원을 시작했습니다. 특히 inert 속성은 나타나거나 사라지는 시각적 애니메이션 효과를 주는 컴포넌트를 만드는 데에 아주 좋은 대체 수단입니다.",
+  "background_paragraph2":"예를 들어, 저는 요소를 만든 다음 overflow:hidden;와 min-height 0.15s;로 설정 한 다음, 숨겨져있을 때 min-height를 0픽셀로, 나타날 때 min-height를 원하는 특정된 사이즈로 설정한 다음. 마지막으로, 접근성을 위해 inert 속성을 숨겨질 때마다 적용했습니다.",
+  "background_paragraph3":"개발자들은 오래전부터 이런 요소들을 만들어 왔습니다. 하지만, 그 요소들은 숨겨져 있어도 접근할 수 있었습니다. 정말 큰 문제였습니다. 그래서, 접근성 엔지니어들은 그것들을 고치려고 노력해왔습니다. 이 문제를 해결하기 위해 컨테이너 aria-hidden=true와 항목에 tabindex=0을 주고 있었지요. 이제, 우리는 더 이상 이 일을 할 필요가 없습니다. 'inert' 속성 덕분입니다.",
+  "h4_example":"예제",
+  "example_paragraph1":"아래는 체험을 위한 예제 버튼입니다.",
+  "example_label":"Hello World 셈플",
+  "example_content":"Hello, World!"
+}

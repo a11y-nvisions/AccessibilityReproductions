@@ -1,21 +1,33 @@
+import { GetStaticProps } from "next";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import {FC} from "react";
 import TabLayout,{TabContentInfo} from "../component/TabLayout";
-
 const Page_TabLayout:FC<{[key:string]:any}> = () =>{
+  const {t} = useTranslation("tab");
   const info:TabContentInfo[] = [
-    {label:"Apple",panel:<p>Apple is a name of delicious fruit! And Also it&apos;s a name of company that famous for iPhone!</p>},
-    {label:"Google",panel:<p>Google is a name of search enine, service, and company. Google is my favorite search engine!</p>}
+    {label:t("tab_apple"), panel:<p>{t("paragraph_apple")}</p>},
+    {label:t("tab_google"), panel:<p>{t("paragraph_google")}</p>}
   ];
   return (
     <>
     <Head>
-      <title>Example for WAI-ARIA Tab - Accessibility Reproductions</title>
+      <title>{`${t("title")} - ${t("common:title")}`}</title>
     </Head>
-    <h2>WAI-ARIA Tab Element</h2>
-    <p>Below Content is Tabs that applied WAI-ARIA for Assistive Technologies.</p>
+    <h2>{t("main_title")}</h2>
+    <p>{t("introduce")}</p>
     <TabLayout defaultSelected={0} tabControlInfo={info} />
     </>
   )
 }
+
+export const getStaticProps:GetStaticProps = async ({ locale }) =>{
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "", ['common', 'tab'])),
+    },
+  };
+}
+
 export default Page_TabLayout;

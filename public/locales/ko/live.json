@@ -1,0 +1,12 @@
+{
+  "title":"VoiceOver가 탐색할 수 없는 실시간 렌더링 콘텐츠의 문제",
+  "main_title":"VoiceOver가 탐색할 수 없는 실시간 렌더링 콘텐츠의 문제",
+  "introduce":"우리는 웹 페이지를 탐색하는 동안 타이머, 카운터, 시계와 D-Day와 같은 실시간 영역을 쉽게 찾을 수 있습니다. 때때로, 이것들은 iOS VoiceOver 탐색에 문제를 일으킵니다.",
+  "h3_try_experience":"직접 체험해보세요.",
+  "try_experience_paragraph1":"iPhone이나 iPad에서 VoiceOver의 쓸어서 탐색 동작을 통해 아래 영역을 통과해 보세요. 통과할 수 없을겁니다.",
+  "try_experience_paragraph2":"그리고 다음 시계 영역도 탐색해보세요. 아마 VoiceOver로 통과할 수 있을겁니다.",
+  "h3_conclusion":"결론",
+  "conclusion_paragraph1" : "신기하지요? 왜 이곳을 VoiceOver가 통과할 수 있다고 생각하시나요? 힌트는 첫 번째 시계와 마지막 시계 사이에 있습니다. 한 가지 차이점이 있습니다. 그 차이는 데이터를 업데이트하는 방법입니다.",
+  "conclusion_paragraph2" : "마지막에 본 시계는 오로지 DOM 요소 안에 있는 텍스트 노드만을 업데이트합니다. 업데이트할 때마다 요소를 새로 바꾸지 않는 것이지요. 쓸어 넘겨 탐색할 때, iOS VoiceOver는 빠르고 반복적으로 추가 및 제거된 요소를 탐색할 수 없고, VoiceOver는 바보처럼 마지막 탐색 요소를 현재 화면의 마지막 요소로 인식합니다 :)",
+  "conclusion_paragraph3" : "데이터 업데이트를 위해 전체 요소를 교체하지 말아주세요. 데이터를 업데이트할 때는 웹 사이트와 웹 애플리케이션에 대한 안정적인 사용자 경험을 만들기 위해 요소 내부의 텍스트만 업데이트하세요."
+}

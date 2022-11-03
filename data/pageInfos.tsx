@@ -6,19 +6,19 @@ interface PageRegisterInit {
 
 const RegisteredPages:PageRegisterInit[] = [
   {
-    path:"/",label: "Home",
+    path:"/",label: "menu.home",
   },
   {
-    path:"/inert-accordion", label: "How to utilize inert attrubte for animation",
+    path:"/inert-accordion", label: "menu.accordion",
   },
   {
-    path:"/tab-layout", label: "WAI-ARIA Tab Example",
+    path:"/tab-layout", label: "menu.aria_tab",
   },
   {
-    path:"/tab/", label: "The tab-layout with routing",
+    path:"/tab/", label: "menu.routing_tab",
   },
   {
-    path:"/live", label: "Refreshing element problem with iOS VoiceOver",
+    path:"/live", label: "menu.real-time_clock",
   }
 ]
 

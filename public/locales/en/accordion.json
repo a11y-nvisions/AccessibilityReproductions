@@ -1,0 +1,13 @@
+{
+  "title":"How to utilize inert attribute for animation - Accessibility Reproductions",
+  "main_title":"How to utilize inert attribute for animation",
+  "introduce":"This page is for an easy way of giving the showing and hiding-animation with using 'inert' attribute in the web.",
+  "h3_background":"Background",
+  "background_paragraph1":"CSS Properties, display:none; or visibility:hidden is not a good at providing an animation effect. As you know, in these cases, Web element can't be show the most animations smoothy. In the near past, to give them animation effects when appears or disappears, We had to use a DOM events that a very complex. However, recently <dialog> tag and inert attribute have started to supporting most browsers. Expecially, inert attribute is a very good alternative when create components that hide or show contents with animation.",
+  "background_paragraph2":"For example, I've make element and then set it overflow:hidden and min-height 0.15s;, min-height to 0 pixel when hiding contents, min-height to specific size value when appearing contents, and when it's hidden. and last, I've set an inert attribute for accessibility.",
+  "background_paragraph3":"Developers have been making elements like this for a long time ago. but, their elements were accessible even if it's hidden. that was a big problem. So, accessibility engineers have been trying to fix them. they had been giving container an 'aria-hidden=true' and giving items a 'tabindex=0' for solving this issue. Now, we are no more need to do these, because of inert attribute.",
+  "h4_example":"Example",
+  "example_paragraph1":"The below button is a result of this example for experience",
+  "example_buttonLabel":"Hello World Sample",
+  "example_content":"Hello, World!"
+}

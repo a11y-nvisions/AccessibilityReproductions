@@ -1,6 +1,10 @@
-import {Browser, BrowserInfo, detect, DetectedInfoType} from "detect-browser";
+import {detect} from "detect-browser";
+import { GetServerSideProps } from "next";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import Link from "next/link";
+import Script from "next/script";
 import React, { FC, useEffect, useRef, useState } from "react"
 import RegisteredPages from "../data/pageInfos";
 import NoticeBar from "./noticeBar";
@@ -25,10 +29,12 @@ export default function MainLayout ({children}:{children:React.ReactElement|Reac
       currentBrowser(info.name)
     }
   },[browserCheck,currentBrowser,detect])
+  let {t} = useTranslation("common");
   return (
     <>
+      <Script src="https://kit.fontawesome.com/739edf4b29.js" crossOrigin="anonymous"></Script>
       <div id="root">
-        <header><button id="btn_hamburger" aria-label="Index Menu" onClick={showMenu}><i className="fa-solid fa-bars"></i></button><h1>Accessibility Issue Reproductions</h1></header>
+        <header><button id="btn_hamburger" aria-label={t("btn_menu_open")} onClick={showMenu}><i className="fa-solid fa-bars"></i></button><h1>Accessibility Issue Reproductions</h1></header>
         <div className='notice-wrapper'>
             {(()=>{
               if ( browserCheck === "firefox" ) {
@@ -46,28 +52,30 @@ export default function MainLayout ({children}:{children:React.ReactElement|Reac
           <main>
               {children}
           </main>
-          <dialog ref={(el)=>{
+          <dialog aria-labelledby="navigation_title" ref={(el)=>{
             menuRef.current=el!;
             el?.setAttribute('inert','');
           }} id="navigation">
             <form method="dialog">
-              <div id="navigation_title"><strong>Page Index</strong></div>
+              <div id="navigation_title" aria-hidden={true}><strong>{t("nav_title")}</strong></div>
               <nav>
                   <ul className="no-bullet">
                     {
                       RegisteredPages.map((info,idx) => {
                         if(info.label){
-                          return <li key={`main-nav_${idx+1}`}><Link onClick={hideMenu} href={info.path}>{info.label}</Link></li>
+                          return <li key={`main-nav_${idx+1}`}><Link onClick={hideMenu} href={info.path}>{t(info.label)}</Link></li>
                         }
                       })
                     }
                   </ul>
               </nav>
-              <button id="nav_close" type="button" aria-label={'Close Page Index Menu'} onClick={hideMenu}>X</button>
+              <button id="nav_close" type="button" aria-label={t("btn_close")} onClick={hideMenu}>X</button>
             </form>
           </dialog>
-          <footer>&copy; NVISIONS</footer>
+          <footer>&copy; {t("copyright")}</footer>
       </div>
     </>
   )
 }
+
+

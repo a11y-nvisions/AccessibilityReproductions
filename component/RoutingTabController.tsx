@@ -1,4 +1,4 @@
-import Router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import React,{useState,useEffect,useRef, ReactElement, ReactNode} from "react";
 export interface RoutingTabs {
   path : string;

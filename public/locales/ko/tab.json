@@ -1,0 +1,13 @@
+{
+  "title": "WAI-ARIA 탭 요소",
+  "routing": "(라우팅)",
+  "offline": "(오프라인)",
+  "main_title" : "WAI-ARIA 탭 요소",
+  "introduce" : "아래 탭은 보조 기술을 위해 WAI-ARIA가 적용된 탭입니다.",
+  "tab_google" : "구글",
+  "tab_apple" : "애플",
+  "tab_microsoft" : "마이크로소프트",
+  "paragraph_google" : "구글은 검색 엔진 이름입니다. 제가 가장 좋아하는 검색 엔진이죠!",
+  "paragraph_apple" : "애플, 사과는 맛있는 과일이지요. 아이폰으로 유명한 회사 이름이기도 해요.",
+  "paragraph_microsoft" : "마이크로소프트! 안정적인 운영체제를 만드는 멋진 회사라고 생각해요. 전 혁신적인 걸 좋아합니다. 지금도 그렇고요. 혁신도 좋지만, 안정적인 것을 잘만드는 건 마이크로소프트 같습니다."
+}

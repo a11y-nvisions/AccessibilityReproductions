@@ -1,0 +1,13 @@
+{
+  "title": "WAI-ARIA Tab Element",
+  "offline":"(Offline)",
+  "routing":"(Routing)",
+  "main_title" : "WAI-ARIA Tab Element",
+  "introduce" : "Below Content is Tabs that applied WAI-ARIA for Assistive Technologies.",
+  "tab_google" : "Google",
+  "tab_apple" : "Apple",
+  "tab_microsoft" : "Microsoft",
+  "paragraph_google" : "Google is a name of search engine, service, and company. Google is my favorite search engine!",
+  "paragraph_apple" : "Apple is a name of delicious fruit! And Also it's a name of company that famous for iPhone!",
+  "paragraph_microsoft" : "Microsoft! I think cool company that make a stable operating system! I was liked innovational things. So, I&aps;ve been crazy them, and I still like them. But, I think compnay that make the most-stable OS is a Microsoft."
+}

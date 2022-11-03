@@ -1,17 +1,28 @@
 import Head from "next/head";
-
+import  {useTranslation} from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { GetStaticProps } from "next";
 function home () {
+  let {t} = useTranslation("home");
   return (
     <>
       <Head>
-      <title>Home - Accessibility Reproductions</title>
-      <meta name="description" content="Accessibility Reproductions for reporting bugs and issues" />
-    </Head>
-      <h2>Accessibility Issue Reproductions</h2>
-      <p>This is an issue reproduction and experience hall for exhibit web accessibility issue samples..</p>
-      <p>Some pages might be examples for reporting to some customers and companies directly.</p>
+        <title>{`${t("title")} - ${t("common:title")}`}</title>
+        <meta name="description" content="Accessibility Reproductions for reporting bugs and issues" />
+      </Head>
+      <h2>{t("main_title")}</h2>
+      <p>{t("introduce1")}</p>
+      <p>{t("introduce2")}</p>
     </>
   )
+}
+
+export const getStaticProps:GetStaticProps = async ({ locale }) =>{
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "", ['common', 'home'])),
+    },
+  };
 }
 
 export default home;

@@ -1,18 +1,27 @@
 import Head from "next/head";
 import { ReactNode } from "react";
-import RoutingTabLayout from "./_layout";
-
+import RoutingTabLayout from "../../component/tabRouterLayout";
+import  {useTranslation} from "next-i18next";
+import { GetServerSideProps, GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 function Content_Microsoft () {
+  const {t} = useTranslation('tab');
   return (
     <>
     <Head>
-      <title>Microsoft Tab - Accessibility Reproductions</title>
+    <title>{`${t("tab:tab_microsoft")} ${t("common:word_tab")} : ${t("title")}${t("routing")} - ${t("common:title")}`}</title>
     </Head>
-    <p>Microsoft! I think cool company that make a stable operating system! I was liked innovational things. So, I&aps;ve been crazy them, and I still like them. But, I think compnay that make the most-stable OS is a Microsoft</p>
+    <p>{t("tab:paragraph_microsoft")}</p>
     </>
   )
 }
 
-Content_Microsoft.getLayout = (page:ReactNode)=> <RoutingTabLayout>{page}</RoutingTabLayout>
+Content_Microsoft.getLayout = (page:ReactNode) => <RoutingTabLayout>{page}</RoutingTabLayout>
+
+export const getStaticProps:GetStaticProps = async ({locale} : any ) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["tab",'common']))
+  },
+});
 
 export default Content_Microsoft;

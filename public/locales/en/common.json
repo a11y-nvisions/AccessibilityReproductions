@@ -1,0 +1,16 @@
+{
+  "title":"Accessibility Reproductions",
+  "copyright" : "NVISIONS",
+  "word_tab":"Tab",
+  "btn_menu_open":"Open a Page Index",
+  "btn_close":"Close",
+  "nav_title":"Page Index",
+  "loading":"Loading...",
+  "menu":{
+    "home":"Home",
+    "accordion":"How to utilize inert attribute for animation",
+    "aria_tab":"WAI-ARIA Tab Example",
+    "routing_tab":"WAI-ARIA Tab with Next.js Routing",
+    "real-time_clock":"A Problem that VoiceOver unnavigatable real-time rendering contents."
+  }
+}
