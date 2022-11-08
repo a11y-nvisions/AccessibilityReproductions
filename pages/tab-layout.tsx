@@ -4,6 +4,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import {FC} from "react";
 import TabLayout,{TabContentInfo} from "../component/TabLayout";
+import setStaticProps from "../util/setStaticProps";
 const Page_TabLayout:FC<{[key:string]:any}> = () =>{
   const {t} = useTranslation("tab");
   const info:TabContentInfo[] = [
@@ -21,13 +22,6 @@ const Page_TabLayout:FC<{[key:string]:any}> = () =>{
     </>
   )
 }
-
-export const getStaticProps:GetStaticProps = async ({ locale }) =>{
-  return {
-    props: {
-      ...(await serverSideTranslations(locale ?? "", ['common', 'tab'])),
-    },
-  };
-}
+export const getStaticProps = setStaticProps(["common","tab"]);
 
 export default Page_TabLayout;

@@ -4,6 +4,7 @@ import RoutingTabLayout from "../../component/tabRouterLayout";
 import  { useTranslation } from "next-i18next";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import setStaticProps from "../../util/setStaticProps";
 
 function Content_google () {
   let {t} = useTranslation('tab');
@@ -19,11 +20,7 @@ function Content_google () {
 
 
 
-export const getStaticProps:GetStaticProps = async ({locale} : any ) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ["tab",'common']))
-  },
-});
+export const getStaticProps = setStaticProps(["common","tab"]);
 
 Content_google.getLayout = (page:ReactNode) => <RoutingTabLayout>{page}</RoutingTabLayout>
 

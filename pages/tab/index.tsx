@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { ReactNode, useEffect, useTransition } from "react";
 
 import RoutingTabLayout from "../../component/tabRouterLayout";
+import setStaticProps from "../../util/setStaticProps";
 
 function Content_index () {
   const router = useRouter();
@@ -22,11 +23,7 @@ function Content_index () {
   )
 }
 
-export const getStaticProps:GetStaticProps = async ({locale} : any ) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ["tab",'common']))
-  },
-});
+export const getStaticProps = setStaticProps(["common","tab"]);
 
 Content_index.getLayout = (page:ReactNode)=><RoutingTabLayout>{page}</RoutingTabLayout>
 

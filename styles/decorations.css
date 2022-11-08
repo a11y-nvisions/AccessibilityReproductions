@@ -1,8 +1,8 @@
 @layer decoration {
-  span.quote::after {
+  span.quote::before {
     content:"\201C";
   }
-  span.quote::before {
+  span.quote::after {
     content:"\201D";
   }
   span.squote:before {
@@ -13,5 +13,21 @@
   }
   span.apos::before {
     content:"\0027";
+  }
+  div.blockquote {position: relative; display: flex; width:fit-content; gap:0.5em; padding:0.5em;
+  align-items: center;}
+  div.blockquote>.content{width: 100%;}
+  div.blockquote:before,
+  div.blockquote:after{
+    height:1rem; width:100%; flex:0;
+    position: relative; font-size:3em;
+    align-self: flex-start;
+  }
+  div.blockquote::before {
+    content:"《";
+  }
+  div.blockquote::after {
+    content:"⟫";
+    top:-0.1em;
   }
 }

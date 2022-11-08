@@ -4,6 +4,7 @@ import Axios from 'axios';
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Trans, useTranslation } from "next-i18next";
+import setStaticProps from "../util/setStaticProps";
 
 export default function LiveTimer(){
   const [[getH,setH],[getM,setM],[getS,setS]] = [useState(""),useState(""),useState("")];
@@ -48,10 +49,4 @@ export default function LiveTimer(){
   );
 }
 
-export const getStaticProps:GetStaticProps = async ({ locale }) =>{
-  return {
-    props: {
-      ...(await serverSideTranslations(locale ?? "", ['common',"live"])),
-    },
-  };
-}
+export const getStaticProps = setStaticProps(["common","live"]);

@@ -4,6 +4,7 @@ import Summarizable from '../component/summarizable';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
+import setStaticProps from '../util/setStaticProps';
 
 const Page_Accordion:FC<{[key:string]:any}> = ()=> {
   const {t} = useTranslation("accordion");
@@ -43,12 +44,6 @@ const Page_Accordion:FC<{[key:string]:any}> = ()=> {
   );
 }
 
-export const getStaticProps:GetStaticProps = async ({ locale }) =>{
-  return {
-    props: {
-      ...(await serverSideTranslations(locale ?? "", ['common', 'accordion'])),
-    },
-  };
-}
+export const getStaticProps = setStaticProps(["common","accordion"]);
 
 export default Page_Accordion;

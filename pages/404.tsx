@@ -4,6 +4,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import Link from "next/link";
 import React,{FC} from "react" ;
+import setStaticProps from "../util/setStaticProps";
 const Page_ERROR404: FC<{[key:string]:any}> = ()=> {
   const {t} = useTranslation("error404");
   return (
@@ -19,8 +20,6 @@ const Page_ERROR404: FC<{[key:string]:any}> = ()=> {
   )
 }
 
-export const getStaticProps:GetStaticProps = async ({locale}:any)=>({props:{
-  ...(await serverSideTranslations(locale,["common","error404"]))
-}})
+export const getStaticProps = setStaticProps(["common","error404"]);
 
 export default Page_ERROR404;

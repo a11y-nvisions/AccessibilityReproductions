@@ -4,6 +4,7 @@ import RoutingTabLayout from "../../component/tabRouterLayout";
 import  {useTranslation} from "next-i18next";
 import { GetServerSideProps, GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import setStaticProps from "../../util/setStaticProps";
 function Content_Microsoft () {
   const {t} = useTranslation('tab');
   return (
@@ -18,10 +19,6 @@ function Content_Microsoft () {
 
 Content_Microsoft.getLayout = (page:ReactNode) => <RoutingTabLayout>{page}</RoutingTabLayout>
 
-export const getStaticProps:GetStaticProps = async ({locale} : any ) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ["tab",'common']))
-  },
-});
+export const getStaticProps = setStaticProps(["common","tab"]);
 
 export default Content_Microsoft;

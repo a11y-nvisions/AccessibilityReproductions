@@ -11,6 +11,7 @@
     "accordion":"How to utilize inert attribute for animation",
     "aria_tab":"WAI-ARIA Tab Example",
     "routing_tab":"WAI-ARIA Tab with Next.js Routing",
-    "real-time_clock":"A Problem that VoiceOver unnavigatable real-time rendering contents."
+    "real-time_clock":"A Problem that VoiceOver unnavigatable real-time rendering contents.",
+    "tabindex_container_talkback":"Talkback : Foucs-issue for a container that's set tabindex"
   }
 }

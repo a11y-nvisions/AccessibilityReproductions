@@ -1,0 +1,15 @@
+{
+    "title":"Talkback : Foucs-issue for a container that's set tabindex",
+    "main_title":"Talkback : Talkback : Foucs-issue for a container that's set tabindex",
+    "h3_introduce":"Introduction",
+    "desc_p1":"We notify this content is for reporting Talkback issue at Google before starting this post.",
+    "desc_p2":[
+        "Talkback has been causing a trouble at containers that applied tabindex attribute to \"0\", or \"-1\" for implementing keyboard navigation.",
+        "This would not to be a serious issue for using the websites with Talkback. But, if This issue won't solved at the future, Talkback would not to be an ideal assistive technologies for everyone.",
+        "First, please experience this yourself at the below container before tell you a trouble."
+    ],
+    "example1":"This is a first paragraph in a div container that applied a <0>{{tabindex}}</0> attribute!",
+    "example2":"This is a second paragraph that has a {{linkText}}.",
+    "link":"Test",
+    "desc_p3":"There were Two paragraphs and a link inside the above container. When navigate there with swiping one finger to left at first time, Talkback makes a unnecessary accessibility focusable node that's the sub views combined. And if you do swiping one-finger to left twice and more, you will be able to see your Talkback navigates divided nodes."
+}

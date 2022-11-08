@@ -13,6 +13,7 @@
     "accordion":"애니메이션 효과를 위한 inert 속성 활용 방법",
     "aria_tab":"WAI-ARIA 탭 예제",
     "routing_tab":"Next.js 라우팅을 사용하는 ARIA TAB",
-    "real-time_clock":"VoiceOver가 탐색할 수 없는 실시간 렌더링 콘텐츠의 문제"
+    "real-time_clock":"VoiceOver가 탐색할 수 없는 실시간 렌더링 콘텐츠의 문제",
+    "talkback_tabindex_container":"Talkback : tabindex가 설정된 컨테이너의 초점 이슈"
   }
 }

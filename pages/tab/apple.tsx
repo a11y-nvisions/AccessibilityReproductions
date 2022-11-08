@@ -4,6 +4,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { ReactNode } from "react";
 import RoutingTabLayout from "../../component/tabRouterLayout";
+import setStaticProps from "../../util/setStaticProps";
 
 function Content_apple () {
   const {t} = useTranslation("tab");
@@ -17,13 +18,7 @@ function Content_apple () {
   )
 }
 
-export const getStaticProps:GetStaticProps = async ({ locale }) =>{
-  return {
-    props: {
-      ...(await serverSideTranslations(locale ?? "", ['common', 'tab'])),
-    },
-  };
-}
+export const getStaticProps = setStaticProps(["common","tab"]);
 
 Content_apple.getLayout = (page:ReactNode) => <RoutingTabLayout>{page}</RoutingTabLayout>
 
