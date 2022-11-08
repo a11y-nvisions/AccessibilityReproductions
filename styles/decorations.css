@@ -23,11 +23,4 @@
     position: relative; font-size:3em;
     align-self: flex-start;
   }
-  div.blockquote::before {
-    content:"《";
-  }
-  div.blockquote::after {
-    content:"⟫";
-    top:-0.1em;
-  }
 }

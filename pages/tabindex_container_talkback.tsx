@@ -15,7 +15,7 @@ export default function Conainter () {
             </Head>
             <h2>{t('main_title')}</h2>
             <p>{t("desc_p1")}</p>
-            <p>{t("desc_p2",{joinArrays:("")})}</p>
+            <p>{t("desc_p2",{joinArrays:("\n")})}</p>
             <div aria-label="test" tabIndex={-1} className={"ex-container blockquote"}>
                 <div className="content">
                     <p>
