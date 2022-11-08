@@ -8,6 +8,6 @@
   "background_paragraph3":"Developers have been making elements like this for a long time ago. but, their elements were accessible even if it's hidden. that was a big problem. So, accessibility engineers have been trying to fix them. they had been giving container an 'aria-hidden=true' and giving items a 'tabindex=0' for solving this issue. Now, we are no more need to do these, because of inert attribute.",
   "h4_example":"Example",
   "example_paragraph1":"The below button is a result of this example for experience",
-  "example_buttonLabel":"Hello World Sample",
+  "example_label":"Hello World Sample",
   "example_content":"Hello, World!"
 }
