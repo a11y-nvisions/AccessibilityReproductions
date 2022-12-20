@@ -6,6 +6,13 @@
   "btn_close":"Close",
   "nav_title":"Page Index",
   "loading":"Loading...",
+  "listInfo":"{{unit}} {{curr}} of {{total}}",
+  "page":"Page",
+  "list":"List",
+  "item":"Item",
+  "horizontal-gallery-list":"Horizontal Gallery List",
+  "indicator":"indicator",
+  "page-indicator":"Page Indicator",
   "menu":{
     "home":"Home",
     "accordion":"How to utilize inert attribute for animation",

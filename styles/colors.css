@@ -15,6 +15,7 @@
     --fg-link-visited:#22447f;
     --fg-warn:#c67810;
     --bg-scrollbar: #4f4f4f;
+    --bg-backdrop:#ffffff9c;
   }
   @media (prefers-color-scheme:dark) {
     :root {
@@ -31,6 +32,7 @@
       --fg-link:#0099ff;
       --fg-link-visited:#3275c5;
       --fg-warn:#ca8f00;
+      --bg-backdrop:#0000009c;
     }
   }
   /* global and main */
@@ -62,4 +64,8 @@
   .notice-bar.critical-warning .summarizable {background-color: var(--bg-critical-warn);}
   main .summarizable {background-color: var(--bg-section);}
   main .summarizable .section_title {background-color:var(--bg-section); box-shadow: 0 0.3em 0.3em 0.05em rgba(0, 0, 0, 0.3); border:solid 0.05em rgba(255,255,255,0.1);}
+  .modal-overlay { opacity: 0; transition: opacity 0.2s;}
+  .modal-overlay.show { background-color: var(--bg-backdrop); opacity: 1;}
+  .modal-doc {background-color: var(--bg-section);
+  box-shadow: 0 0 1em 1px #000;}
 }

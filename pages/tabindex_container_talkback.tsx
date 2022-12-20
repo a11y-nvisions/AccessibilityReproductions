@@ -24,7 +24,7 @@ export default function Conainter () {
                     ]} />
                     </p>
                     <p>
-                    <Trans t={t} i18nKey={"example2"} values={{linkText:t("link")}} components={[<a key="example2" href="#"></a>]} />
+                    <Trans t={t} i18nKey={"example2"} values={{linkText:t("link")}} components={[<a key="example2" href="#">.</a>]} />
                     </p>
                 </div>
             </div>

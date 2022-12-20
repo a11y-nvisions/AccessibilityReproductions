@@ -8,12 +8,20 @@
   "word_tab":"탭",
   "loading":"불러오는 중...",
   "404": "404: 페이지를 찾을 수 없음",
+  "listInfo":"총 {{total}}개 중 {{curr}}번째 {{unit}}",
+  "page":"페이지",
+  "indicator":"표시기",
+  "page-indicator":"페이지 표시기",
+  "list":"목록",
+  "item":"항목",
+  "horizontal-gallery-list":"수평 갤러리 목록",
   "menu":{
     "home":"홈",
     "accordion":"애니메이션 효과를 위한 inert 속성 활용 방법",
     "aria_tab":"WAI-ARIA 탭 예제",
     "routing_tab":"Next.js 라우팅을 사용하는 ARIA TAB",
     "real-time_clock":"VoiceOver가 탐색할 수 없는 실시간 렌더링 콘텐츠의 문제",
-    "talkback_tabindex_container":"Talkback : tabindex가 설정된 컨테이너의 초점 이슈"
+    "talkback_tabindex_container":"Talkback : tabindex가 설정된 컨테이너의 초점 이슈",
+    "lst_block_by_inert":"inert로 스크롤로 가려진 항목 숨기기"
   }
 }

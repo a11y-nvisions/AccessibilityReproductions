@@ -1,14 +1,12 @@
 import {detect} from "detect-browser";
-import { GetServerSideProps } from "next";
 import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Head from "next/head";
 import Link from "next/link";
 import Script from "next/script";
 import React, { FC, useEffect, useRef, useState } from "react"
 import RegisteredPages from "../data/pageInfos";
 import NoticeBar from "./noticeBar";
 export default function MainLayout ({children}:{children:React.ReactElement|React.ReactNode}) {
+  const [custom_isOpened,custom_setOpen] = useState<boolean>(false);
   let menuRef = useRef<HTMLDialogElement|null>(null);
   const [browserCheck,currentBrowser] = useState<string>("");
   const hideMenu = ()=> {
@@ -30,6 +28,7 @@ export default function MainLayout ({children}:{children:React.ReactElement|Reac
     }
   },[browserCheck,currentBrowser,detect])
   let {t} = useTranslation("common");
+  const [isCustomDialogOpened,openCustomDialog] = useState<boolean>(false)
   return (
     <>
       <Script src="https://kit.fontawesome.com/739edf4b29.js" crossOrigin="anonymous"></Script>
@@ -52,6 +51,7 @@ export default function MainLayout ({children}:{children:React.ReactElement|Reac
           <main>
               {children}
           </main>
+          <footer>&copy; {t("copyright")}</footer>
           <dialog aria-labelledby="navigation_title" ref={(el)=>{
             menuRef.current=el!;
             el?.setAttribute('inert','');
@@ -72,7 +72,6 @@ export default function MainLayout ({children}:{children:React.ReactElement|Reac
               <button id="nav_close" type="button" aria-label={t("btn_close")} onClick={hideMenu}>X</button>
             </form>
           </dialog>
-          <footer>&copy; {t("copyright")}</footer>
       </div>
     </>
   )
