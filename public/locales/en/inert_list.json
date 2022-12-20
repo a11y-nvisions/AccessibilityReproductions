@@ -12,7 +12,7 @@
   "paragraph6":"These two users have simillarities in using computers. A keyboard, They're control a computer by only keyboard or simillar device. But There're differences <0>{{userA}}</0> and <0>{{userB}}</0>.",
   "paragraph7":"<0>{{userA}}</0> relies visual informations to use a computer. On the other hand, <0>{{userB}}</0> relies hearing informations to use a computer.",
   "paragraph8":"<0>{{userB}}</0> can hear about an item in invisible scroll area by keyboard-focusing even if item is invisible. He can choose an item that he want, because he can even get information about hidden contents by voice announcement. But, <0>{{userA}}</0> can't get a any informations of keybard-focusing item in invisible scroll area. <0>{{userA}}</0> can click hidden items but he don't know what item I clicked himself",
-  "paragraph9":"Now you can fix this issue easily by a new attribute, \"inert\"!",
+  "paragraph9":"Now you can fix this issue easily by a new attribute, <0>inert</0>!",
   "scary-beasts":"Scary Beasts!",
   "Tiger":"Tiger",
   "Lion":"Lion",

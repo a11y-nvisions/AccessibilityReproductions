@@ -77,7 +77,7 @@ function WidgetCarousel ( {data,listLabel} : CarouselProps ) {
               }}>
                 {page.map((item,idx)=>{
                     return (
-                      <div style={{ backgroundImage:`url(${item.imageSrc})`, backgroundPosition:"center"}} key={idx} className={`picture-link${item.isDummy ? " dummy" : ""} item-no_${(idx+1)}`}>
+                      <div key={idx} style={{ backgroundImage:`url(${item.imageSrc})`, backgroundPosition:"center"}} className={`picture-link${item.isDummy ? " dummy" : ""} item-no_${(idx+1)}`}>
                         <a href={item.href ? item.href : undefined} style={{color:"transparent",height:"100%",width:"100%"}}>{item.label}</a>
                       </div>
                     )
@@ -110,13 +110,13 @@ export default function Carousel() {
       <p>{t("paragraph1")}</p>
       <p>{t("paragraph2")}</p>
       <p>{t("paragraph3")}</p>
-      <p>{<Trans t={t} i18nKey={"paragraph4"} values={{userA:t("userA"),userB:t("userB")}} components={[<strong></strong>]} />}</p>
-      <p>{<Trans t={t} i18nKey={"paragraph5"} values={{userA:t("userA"),userB:t("userB")}} components={[<strong></strong>]} />}</p>
-      <p>{<Trans t={t} i18nKey={"paragraph6"} values={{userA:t("userA"),userB:t("userB")}} components={[<strong></strong>]} />}</p>
+      <p>{<Trans t={t} i18nKey={"paragraph4"} values={{userA:t("userA"),userB:t("userB")}} shouldUnescape={false} components={[<strong key={0}></strong>]} />}</p>
+      <p>{<Trans t={t} i18nKey={"paragraph5"} values={{userA:t("userA"),userB:t("userB")}} shouldUnescape={false} components={[<strong key={0}></strong>]} />}</p>
+      <p>{<Trans t={t} i18nKey={"paragraph6"} values={{userA:t("userA"),userB:t("userB")}} shouldUnescape={false} components={[<strong key={0}></strong>]} />}</p>
       <p>{
         <>
-          <Trans t={t} i18nKey={"paragraph7"} values={{userA:t("userA"),userB:t("userB")}} components={[<strong></strong>]} />&nbsp;
-          <Trans t={t} i18nKey={"paragraph8"} values={{userA:t("userA"),userB:t("userB")}} components={[<strong></strong>]} />
+          <Trans t={t} i18nKey={"paragraph7"} values={{userA:t("userA"),userB:t("userB")}} shouldUnescape={false} components={[<strong key={0}></strong>]} />&nbsp;
+          <Trans t={t} i18nKey={"paragraph8"} values={{userA:t("userA"),userB:t("userB")}} shouldUnescape={false} components={[<strong key={0}></strong>]} />
         </>
       }</p>
       <p>{t("paragraph9")}</p>

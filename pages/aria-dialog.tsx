@@ -35,7 +35,7 @@ export default function CustomARIADialog(){
           open(true);
       }}>Open Dialog</button>
       <DialogLayer>
-        <CustomDialog ref={focusEntrance} isOpened={typeof isOpened === "boolean" ? isOpened : false} action_close={()=>{ open(false); btnDialogOpen.current?.focus()}} title={{name:"Hello Dialog!",show:true}}><p>It's a Test!</p></CustomDialog>
+        <CustomDialog ref={focusEntrance} isOpened={typeof isOpened === "boolean" ? isOpened : false} action_close={()=>{ open(false); btnDialogOpen.current?.focus()}} title={{name:"Hello Dialog!",show:true}}><p>It&apos;s a Test!</p></CustomDialog>
       </DialogLayer>
     </>
   )
