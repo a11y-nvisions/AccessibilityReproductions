@@ -21,7 +21,10 @@ const RegisteredPages:PageRegisterInit[] = [
     path:"/live", label: "menu.real-time_clock",
   },
   {
-    path:"tabindex_container_talkback", label: "menu.talkback_tabindex_container"
+    path:"/tabindex_container_talkback", label: "menu.talkback_tabindex_container"
+  },
+  {
+    path:"/inert-list", label: "lst_block_by_inert"
   }
 ]
 

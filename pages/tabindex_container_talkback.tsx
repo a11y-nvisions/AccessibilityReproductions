@@ -1,8 +1,5 @@
-import { GetServerSideProps, GetStaticProps } from "next"
-import { i18n, Trans, useTranslation } from "next-i18next"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { Trans, useTranslation } from "next-i18next"
 import Head from "next/head"
-import { Quote } from "../component/punc"
 import setStaticProps from "../util/setStaticProps"
 
 
