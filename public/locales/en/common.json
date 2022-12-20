@@ -19,6 +19,7 @@
     "aria_tab":"WAI-ARIA Tab Example",
     "routing_tab":"WAI-ARIA Tab with Next.js Routing",
     "real-time_clock":"A Problem that VoiceOver unnavigatable real-time rendering contents.",
-    "tabindex_container_talkback":"Talkback : Foucs-issue for a container that's set tabindex"
+    "tabindex_container_talkback":"Talkback : Foucs-issue for a container that's set tabindex",
+    "lst_block_by_inert":"How to block items in the invisible sroll area by inert"
   }
 }

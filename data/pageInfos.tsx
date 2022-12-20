@@ -24,7 +24,7 @@ const RegisteredPages:PageRegisterInit[] = [
     path:"/tabindex_container_talkback", label: "menu.talkback_tabindex_container"
   },
   {
-    path:"/inert-list", label: "lst_block_by_inert"
+    path:"/inert-list", label: "menu.lst_block_by_inert"
   }
 ]
 
