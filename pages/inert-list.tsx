@@ -90,8 +90,16 @@ function WidgetCarousel ( {data,listLabel} : CarouselProps ) {
       <div className="list-indicator">
         <div aria-label={t('page-indicator')} tabIndex={0} role={"separator"} aria-valuemin={0} aria-valuemax={pages.length} aria-valuenow={currentPage+1} aria-valuetext={t("listInfo",{curr:currentPage+1,total:pages.length,unit:t('page')})} className="pagination">{currentPage+1}/{pages.length}</div>
         <div aria-live="polite" className="announcer">
-          <span style={{display:!isTrusted  ? "none" : ""}}>
-            <Trans i18nKey={"listInfo"} values={{curr:currentPage+1,total:pages.length,unit:t("page")}} />
+          <span>
+            {
+              (()=>{
+                if(isTrusted) {
+                  return <Trans i18nKey={"listInfo"} values={{curr:currentPage+1,total:pages.length,unit:t("page")}} />
+                } else {
+                  return <></>
+                }
+              })()
+            }
           </span>
         </div>
       </div>
