@@ -25,7 +25,13 @@ const RegisteredPages:PageRegisterInit[] = [
   },
   {
     path:"/inert-list", label: "menu.lst_block_by_inert"
-  }
+  },
+  {
+    path:"/menus", label: "menu.custom_menu"
+  },
+  {
+    path:"/todo", label: "menu.todo"
+  },
 ]
 
 export default RegisteredPages;

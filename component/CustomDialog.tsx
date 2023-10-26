@@ -1,6 +1,7 @@
 import { useTranslation } from "next-i18next";
-import React, { forwardRef, useEffect, ForwardedRef, useState, useRef } from "react"
+import React, {FC,forwardRef, useEffect, ForwardedRef, useState, useRef } from "react"
 import uuid from "react-uuid";
+
 
 interface CustomDialogInit {
   id?:string,
@@ -19,7 +20,7 @@ const CustomDialog = forwardRef((
   ) => {
   const {id,title,children,isOpened,action_close} = props;
   const [getIdentifier,setIdentifier] = useState<string>(id ?? `id_${uuid()}`);
-  const {t} = useTranslation()
+  const {t} = useTranslation();
   useEffect(()=>{
     if ( document.querySelectorAll(`#${getIdentifier}`).length > 1 ) {
       setIdentifier(`id_${uuid()}`)

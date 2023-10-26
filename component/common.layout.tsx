@@ -23,9 +23,6 @@ export default function MainLayout ({children}:{children:React.ReactElement|Reac
   }
   useEffect(()=>{
     const info = detect()
-    if (info) {
-      currentBrowser(info.name)
-    }
   },[browserCheck,currentBrowser,detect])
   let {t} = useTranslation("common");
   const [isCustomDialogOpened,openCustomDialog] = useState<boolean>(false)

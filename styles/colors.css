@@ -20,7 +20,7 @@
   @media (prefers-color-scheme:dark) {
     :root {
 
-      --bg-accent: #202853;
+      --bg-accent: #25388F;
       --bg-accent-light:#2f3a6d;
       --bg-critical-warn:#cf1f45;
       --fg-accent: #40a8F3;

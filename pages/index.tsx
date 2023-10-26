@@ -1,6 +1,7 @@
 import Head from "next/head";
 import  {useTranslation} from "next-i18next";
 import setStaticProps from "../util/setStaticProps";
+import { useState } from "react";
 function Home () {
   let {t} = useTranslation("home");
   return (

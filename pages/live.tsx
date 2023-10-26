@@ -1,8 +1,6 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Axios from 'axios';
-import { GetStaticProps } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Trans, useTranslation } from "next-i18next";
 import setStaticProps from "../util/setStaticProps";
 

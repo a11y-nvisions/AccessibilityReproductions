@@ -22,6 +22,8 @@
     "routing_tab":"Next.js 라우팅을 사용하는 ARIA TAB",
     "real-time_clock":"VoiceOver가 탐색할 수 없는 실시간 렌더링 콘텐츠의 문제",
     "talkback_tabindex_container":"Talkback : tabindex가 설정된 컨테이너의 초점 이슈",
-    "lst_block_by_inert":"inert로 스크롤로 가려진 항목 숨기기"
+    "lst_block_by_inert":"inert로 스크롤로 가려진 항목 숨기기",
+    "custom_menu":"커스텀 메뉴 요소",
+    "todo":"접근성 좋은 할일 목록 만들기"
   }
 }

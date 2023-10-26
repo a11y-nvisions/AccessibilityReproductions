@@ -1,0 +1,6 @@
+button {
+    font-weight: bold;
+    background-color: var(--bg-accent);
+    padding: 0.25rem;
+    border-radius: 0.2rem;
+}
