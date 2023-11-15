@@ -101,7 +101,7 @@ endDate,startDate}:ToDoItemInterface,ref)=>{
                             isEditMode ? <textarea defaultValue={getContent}
                             onChange={(evt)=>{setContent(evt.target.value)}}
                             name={`input_content_${id}`}
-                            id={`input_title_${id}`}
+                            id={`input_content_${id}`}
                             ref={contentRef}></textarea> : <p>{getContent}</p>
                         }
                     </div>
@@ -120,8 +120,8 @@ endDate,startDate}:ToDoItemInterface,ref)=>{
                         <input 
                         checked={timeLimited}
                         type="checkbox"
-                        name={`noPeriod_${id}`}
-                        id={`noPeriod_${id}`}
+                        name={`noTimeLimit_${id}`}
+                        id={`noTimeLimit_${id}`}
                         onChange={(evt)=>{setTimeLimit(evt.target.checked)}} />
                         {t("label.checkbox.noTimeLimit")}
                     </label>}
