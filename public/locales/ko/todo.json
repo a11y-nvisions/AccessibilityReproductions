@@ -15,5 +15,6 @@
     "label.checkbox.complete":"완료",
     "label.checkbox.noTimeLimit":"기한 없음",
     "label.date.startDate":"시작 날짜",
-    "label.date.endDate":"종료 날짜"
+    "label.date.endDate":"종료 날짜",
+    "alert.saved":"할 일이 저장됨"
 }

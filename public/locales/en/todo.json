@@ -15,5 +15,6 @@
     "label.checkbox.complete":"Done",
     "label.checkbox.noTimeLimit":"No Time Limit",
     "label.date.startDate":"Start Date",
-    "label.date.endDate":"End Date"
+    "label.date.endDate":"End Date",
+    "alert.saved":"To-do has saved."
 }

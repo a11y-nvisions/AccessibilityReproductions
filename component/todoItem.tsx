@@ -1,5 +1,5 @@
 
-import {MutableRefObject, useReducer, useEffect, useRef, useState,Dispatch,forwardRef, ForwardedRef} from "react";
+import {MutableRefObject, useReducer, useEffect, useRef, useState,Dispatch,forwardRef, ForwardedRef, useImperativeHandle} from "react";
 import IdentifierSerialGenerater from "../util/Identifier";
 import { useTranslation,Trans } from "next-i18next";
 
@@ -19,7 +19,6 @@ endDate,startDate}:ToDoItemInterface,ref)=>{
     const id = IdentifierSerialGenerater();
     const titleRef = useRef<HTMLInputElement|null>(null);
     const contentRef = useRef<HTMLTextAreaElement|null>(null);
-    /* const [onEditMode,setEditMode] = useState<boolean>(isEditMode); */
     const [isNewItem,setNewItem] = useState<boolean>(newItem);
     const [getTitle,setTitle] = useState(title);
     const [getContent,setContent] = useState(content);
@@ -29,12 +28,21 @@ endDate,startDate}:ToDoItemInterface,ref)=>{
     const [timeLimited,setTimeLimit] = useState<boolean>(noTimeLimit);
     const [isExpired,setExpired] = useState<boolean>(noTimeLimit ? false : Number(new Date(getEndDate)) <= Date.now());
     const {t} = useTranslation("todo");
-    
+    let timeout:any;
+
     useEffect(()=>{
         if(isEditMode){
-            titleRef.current?.focus();
+            timeout = setTimeout(()=>{
+                clearTimeout(timeout);
+                titleRef.current?.focus();
+            },50);
         } else if ( !isEditMode && isNewItem ){
-            refs.current[index]?.focus();
+            
+            timeout = setTimeout(()=>{
+                clearTimeout(timeout);
+                refs.current[index]?.focus();
+            },50);
+
             setNewItem(false);
         }
     },[isEditMode]);
@@ -47,7 +55,8 @@ endDate,startDate}:ToDoItemInterface,ref)=>{
                 noTimeLimit:timeLimited, isEditMode:false,completed:isCompleted
             }});
         }
-        setExpired( new Date(getEndDate).setHours(0,0,0,0) < new Date(Date.now()).setHours(0,0,0,0) );
+        alert(t("alert.saved"));
+        setExpired(new Date(getEndDate).setHours(0,0,0,0) < new Date(Date.now()).setHours(0,0,0,0) );
     }
 
     const requestFunc_modify = ()=>{
@@ -59,13 +68,19 @@ endDate,startDate}:ToDoItemInterface,ref)=>{
 
     const requestFunc_delete = ()=>{
         if(index < refs.current.length-1) {
-            refs.current[index+1]?.focus();
+            (refs.current[index+1]?.querySelector(".btn.delete") as HTMLElement)?.focus();
         }
         if(index > 0) {
-            refs.current[index-1]?.focus();
+            timeout = setTimeout(()=>{
+                clearTimeout(timeout);
+                (refs.current[index-1]?.querySelector(".btn.delete") as HTMLElement)?.focus();
+            },50)
         }
         if(refs.current.length-1 === 0) {
-            emptyRef.current?.focus();
+            timeout = setTimeout(()=>{
+                clearTimeout(timeout);
+                emptyRef.current?.focus();
+            },50)
         }
         dispatch({type:"deleteItem",payload:{
             index,
@@ -149,6 +164,7 @@ endDate,startDate}:ToDoItemInterface,ref)=>{
                 <div className="flex-row">
                     { isEditMode && 
                     <button 
+                    className="btn save"
                     onClick={requestFunc_save}
                     disabled={ getTitle === "" && getContent === ""}>
                         {t("label.button.save")}
@@ -159,7 +175,7 @@ endDate,startDate}:ToDoItemInterface,ref)=>{
                     aria-describedby={`title_${id} content_${id}`}>
                         {t("label.button.modify")}
                     </button>}
-                    <button onClick={requestFunc_delete}
+                    <button className="btn delete" onClick={requestFunc_delete}
                         aria-label={`${isEditMode ? t("label.button.cancel") : t("label.button.delete")}`}
                         aria-describedby={ !isEditMode ? `title_${id} content_${id}` : undefined }>
                         

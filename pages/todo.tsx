@@ -69,7 +69,8 @@ export default function ToDo(){
     const [todos,dispatchTodo] = useReducer(ToDoItemReducer,{list:[]});
     const itemRefs = useRef<(HTMLElement|null)[]>([]);
     const btnAddNewRef = useRef<HTMLButtonElement>(null);
-    
+    let timeout:any;
+
     useEffect(()=>{
         const savedList:()=>Omit<ToDoItemInterface,"refs"|"dispatch"|"emptyRef">[] = ()=>JSON.parse(localStorage.getItem("todolist") ?? "[]");
         if(savedList().length != 0 && !didMount) {
@@ -88,7 +89,10 @@ export default function ToDo(){
 
             localStorage.setItem("todolist",JSON.stringify(todos.list.filter(s=>!s.isEditMode)));
             if(todos.list.length == 0 && didMount) {
-                btnAddNewRef.current?.focus();
+                timeout = setTimeout(()=>{
+                    clearTimeout(timeout);
+                    btnAddNewRef.current?.focus();
+                },50)
             }
         }
         
@@ -104,7 +108,7 @@ export default function ToDo(){
             {todos.list.length > 0 ? todos.list.map((todo,idx)=>{
                 return <TodoItem ref={(ref)=>{
                     itemRefs.current[idx] = ref;
-                }} key={idx} 
+                }} key={idx}
                 content={todo.content ?? t("template.temporaryContent")}
                 title={todo.title ?? t("template.temporaryTitle")}
                 isEditMode={todo.isEditMode!}
