@@ -1,0 +1,19 @@
+{
+    "title":"make more accessible your to-do list",
+    "main_title":"To-do List",
+    "label.button.add":"Add new to-do",
+    "label.button.save":"Save",
+    "label.button.delete":"Delete",
+    "label.button.modify":"Modify",
+    "label.button.cancel":"Cancel",
+    "label.textbox.title":"To-do Title",
+    "label.textbox.content":"To-do Details",
+    "label.staticText.term":"Time Limit",
+    "staticText.noTodo":"No registered to-do item on your browser",
+    "staticText.noTimeLimit":"No limit for expiration",
+    "staticText.expired":"Expired To-do",
+    "label.checkbox.complete":"Done",
+    "label.checkbox.noTimeLimit":"No Time Limit",
+    "label.date.startDate":"Start Date",
+    "label.date.endDate":"End Date"
+}

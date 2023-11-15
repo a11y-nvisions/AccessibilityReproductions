@@ -77,7 +77,8 @@ endDate,startDate}:ToDoItemInterface,ref)=>{
             <div className="flex-column complete">
                 <input type="checkbox" 
                 defaultChecked={isCompleted}
-                aria-label={`${getTitle} ${getContent} ${t("label.checkbox_complete")}`} id={`complete_${id}`}
+                aria-describedby={`titleValue_${id} contentValue_${id}`}
+                aria-label={t("label.checkbox.complete")} id={`complete_${id}`}
                 onChange={(event)=>{
                     setCompleted(event.target.checked)
                     dispatch({type:"completeItem",payload:{
@@ -155,7 +156,7 @@ endDate,startDate}:ToDoItemInterface,ref)=>{
                     { !isEditMode && <button 
                     onClick={requestFunc_modify}
                     aria-label={t("label.button.modify")}
-                    aria-aria-describedby={`titleValue_${id} contentValue_${id}`}>
+                    aria-describedby={`titleValue_${id} contentValue_${id}`}>
                         {t("label.button.modify")}
                     </button>}
                     <button onClick={requestFunc_delete}
