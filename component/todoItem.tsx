@@ -77,7 +77,7 @@ endDate,startDate}:ToDoItemInterface,ref)=>{
             <div className="flex-column complete">
                 <input type="checkbox" 
                 defaultChecked={isCompleted}
-                aria-describedby={`titleValue_${id} contentValue_${id}`}
+                aria-describedby={`title_${id} content_${id}`}
                 aria-label={t("label.checkbox.complete")} id={`complete_${id}`}
                 onChange={(event)=>{
                     setCompleted(event.target.checked)
@@ -90,13 +90,13 @@ endDate,startDate}:ToDoItemInterface,ref)=>{
             <div className="flex-column todo-content">
                 <div className="flex-row" id={`title_${id}`}>
                     <label htmlFor={`input_title_${id}`} className="key"><strong>{t("label.textbox.title")}:</strong></label>
-                    <div className="value" id={`titleValue_${id}`}>
+                    <div className="value" id={`title_${id}`}>
                         {isEditMode ? <input type="text" defaultValue={getTitle} onChange={(evt)=>{setTitle(evt.target.value)}} ref={titleRef} id={`input_title_${id}`} name={`input_title_${id}`} /> : <h3>{getTitle}</h3>}
                     </div>
                 </div>
                 <div className="flex-row" id={`content_${id}`}>
                     <label className="key" htmlFor={`input_content_${id}`}><strong>{t("label.textbox.content")}:</strong></label>
-                    <div className="value" id={`contentValue_${id}`}>
+                    <div className="value" id={`content_${id}`}>
                         {
                             isEditMode ? <textarea defaultValue={getContent}
                             onChange={(evt)=>{setContent(evt.target.value)}}
@@ -156,12 +156,12 @@ endDate,startDate}:ToDoItemInterface,ref)=>{
                     { !isEditMode && <button 
                     onClick={requestFunc_modify}
                     aria-label={t("label.button.modify")}
-                    aria-describedby={`titleValue_${id} contentValue_${id}`}>
+                    aria-describedby={`title_${id} content_${id}`}>
                         {t("label.button.modify")}
                     </button>}
                     <button onClick={requestFunc_delete}
                         aria-label={`${isEditMode ? t("label.button.cancel") : t("label.button.delete")}`}
-                        aria-describedby={ !isEditMode ? `titleValue_${id} contentValue_${id}` : undefined }>
+                        aria-describedby={ !isEditMode ? `title_${id} content_${id}` : undefined }>
                         
                         {isEditMode ? t("label.button.cancel") : t("label.button.delete")}
                     </button>
