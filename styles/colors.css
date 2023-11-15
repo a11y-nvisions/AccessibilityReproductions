@@ -7,6 +7,7 @@
     --bg-body:#eff5ff;
     --fg-white:#fff;
     --fg-txt:#151515;
+    --fg-canceled:#7f7f7f;
     --bg-section: #fff;
     --bg-navigation:#f4faffcF;
     --fg-link:#1254cf;
@@ -16,15 +17,17 @@
     --fg-warn:#c67810;
     --bg-scrollbar: #4f4f4f;
     --bg-backdrop:#ffffff9c;
+    color-scheme: default;
   }
   @media (prefers-color-scheme:dark) {
     :root {
-
+      color-scheme: dark;
       --bg-accent: #25388F;
       --bg-accent-light:#2f3a6d;
       --bg-critical-warn:#cf1f45;
       --fg-accent: #40a8F3;
       --bg-body:#151515;
+      --fg-canceled:#7f7f7f;
       --bg-navigation:#232527DF;
       --bg-section: #232323;
       --fg-txt:#cfcfcf;

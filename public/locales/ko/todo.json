@@ -1,4 +1,19 @@
 {
     "title":"접근성 좋은 할 일 목록 만들기",
-    "main_title":"할 일(To Do) 목록"
+    "main_title":"할 일(To Do) 목록",
+    "label.button.add":"할 일 추가",
+    "label.button.save":"저장",
+    "label.button.delete":"삭제",
+    "label.button.modify":"수정",
+    "label.button.cancel":"취소",
+    "label.textbox.title":"할 일 제목",
+    "label.textbox.content":"할 일 내용",
+    "label.staticText.term":"기한",
+    "staticText.noTodo":"할일이 등록되어있지 않습니다.",
+    "staticText.noTimeLimit":"무기한",
+    "staticText.expired":"기한 지남",
+    "label.checkbox.complete":"완료",
+    "label.checkbox.noTimeLimit":"기한 없음",
+    "label.date.startDate":"시작 날짜",
+    "label.date.endDate":"종료 날짜"
 }

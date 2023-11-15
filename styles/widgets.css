@@ -4,3 +4,52 @@ button {
     padding: 0.25rem;
     border-radius: 0.2rem;
 }
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.flex-row {display: flex;}
+.todoitem {
+    display: flex; justify-content: center;
+    width: 80%; min-height: 20vh; max-height: 40vh; padding: 1rem;
+    border-radius: 0.5rem; margin: 1rem;
+    background-color: var(--bg-section);
+    font-size: 1.2rem;
+}
+.flex-column { display: flex; flex-direction: column; gap: 0.25rem;}
+.flex-column.complete { max-width: fit-content; justify-content: center; flex-direction: column; padding: 1.5rem; }
+.flex-column.complete>input[type=checkbox] { 
+    appearance: none; display: flex; width: 2rem; height: 2rem; border-radius: 50%; outline-offset: 0.25rem;
+    border: solid 0.15rem var(--fg-txt);
+    align-items: end; justify-content: center;
+}
+.flex-column.complete>input[type=checkbox]::after { 
+    content:"\f00c"; font-weight: 600; font-size: 1.5rem;
+    font-family: "FontAwesome"; line-height: 1; text-align: center;
+    color: transparent;
+}
+.flex-column.complete input[type=checkbox]:checked::after { color: var(--fg-txt); }
+.todoitem.flex-row.onEditing .flex-column.complete input[type=checkbox] {
+    display: none;
+}
+
+.flex-column.todo-content { width: 100%;}
+.todoitem .flex-row { display: flex; align-items: center; padding: 0.1rem; column-gap: 0.5rem;}
+.todoitem .flex-row :is(.key,.value) { display: flex; align-items: center; padding:0.1rem;}
+
+.todoitem.flex-row.onEditing input[type=text], .onEditing textarea { 
+    width: 100%; height: 100%; display: inline-flex; padding: 0.25rem; resize: none;
+    vertical-align: middle;
+}
+.todoitem.flex-row.onEditing :is(input,textarea) { 
+    font-size: 1.15rem; height: 100%;
+ }
+
+.todoitem h3 {font-size: 1.15rem; font-weight: normal;}
+
+.todoitem.flex-row .value {flex:1; gap:1rem;}
+.todoitem.expired :is(.key,.value) {  color: var(--fg-canceled); text-decoration: line-through;}
+
+.todoitem.flex-row .flex-column.todo-content input[type=checkbox] {width: 1rem; height: 1rem;}
+label input, label textarea { margin: 0.25rem;}

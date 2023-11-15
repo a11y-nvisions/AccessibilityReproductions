@@ -6,7 +6,7 @@ import {useRouter} from "next/router";
 import Menu, { MenuItemInit } from "../component/menus";
 
 export default function Menus(){
-    const {t} = useTranslation("menus")
+    const {t} = useTranslation("menus");
     const router = useRouter()
     const [title,setTitle] = useState<string>("")
 
