@@ -176,13 +176,14 @@ endDate,startDate}:ToDoItemInterface,ref)=>{
                     disabled={ getTitle === "" && getContent === ""}>
                         {t("label.button.save")}
                     </button>}
+
                     { !isEditMode && <button 
                     onClick={requestFunc_modify}
                     aria-label={t("label.button.modify")}
                     aria-describedby={`title_${id} content_${id}`}>
                         {t("label.button.modify")}
                     </button>}
-                    <button className="btn delete" onClick={newItem ? requestFunc_delete : requestFunc_cancel}
+                    <button className="btn delete" onClick={ !isEditMode ? requestFunc_delete : isNewItem ? requestFunc_delete : requestFunc_cancel}
                         aria-label={`${isEditMode ? t("label.button.cancel") : t("label.button.delete")}`}
                         aria-describedby={ !isEditMode ? `title_${id} content_${id}` : undefined }>
                         {isEditMode ? t("label.button.cancel") : t("label.button.delete")}
