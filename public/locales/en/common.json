@@ -13,6 +13,8 @@
   "horizontal-gallery-list":"Horizontal Gallery List",
   "indicator":"indicator",
   "page-indicator":"Page Indicator",
+  "button_view-more":"More options for {{name}}",
+  "menu_view-more":"Options for {{name}}",
   "menu":{
     "home":"Home",
     "accordion":"How to utilize inert attribute for animation",
@@ -21,7 +23,7 @@
     "real-time_clock":"A Problem that VoiceOver unnavigatable real-time rendering contents.",
     "tabindex_container_talkback":"Talkback : Foucs-issue for a container that's set tabindex",
     "lst_block_by_inert":"How to block items in the invisible sroll area by inert",
-    "custom_menu":"Custom Menu Element",
-    "todo":"how to make accessible todo"
+    "listWidget":"Example: Operation continuity for list style widget",
+    "todo":"Example: Accessible todo"
   }
 }

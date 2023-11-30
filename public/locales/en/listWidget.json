@@ -1,0 +1,11 @@
+{
+    "title":"Operation continuity for list style widget",
+    "menuitem_delete":"Delete",
+    "menuitem_modify":"Modify",
+    "key_name":"Name",
+    "key_gender":"Gender",
+    "key_phone":"Phone",
+    "key_job":"Job",
+    "value_gender_0":"Male",
+    "value_gender_1":"Female"
+}

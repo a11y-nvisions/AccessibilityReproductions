@@ -1,9 +1,15 @@
 :root {
     --todo-width:80%;
+    --contact-width:60%;
+    --contact-font-size:1.2rem;
+    --columns:auto 1fr auto;
 }
 @media (max-width:768px) {
     :root {
         --todo-width:100%;
+        --contact-width:100%;
+        --contact-font-size:1.1rem;
+        --columns:auto 1fr;
     }
 }
 button {
@@ -30,7 +36,7 @@ button:disabled {
 .flex-column.complete>input[type=checkbox] { 
     appearance: none; display: flex; width: 2rem; height: 2rem; border-radius: 50%; outline-offset: 0.25rem;
     border: solid 0.15rem var(--fg-txt);
-    align-items: end; justify-content: center;
+    align-items: flex-end; justify-content: center;
 }
 .flex-column.complete>input[type=checkbox]::after { 
     content:"\f00c"; font-weight: 600; font-size: 1.5rem;
@@ -61,3 +67,45 @@ button:disabled {
 
 .todoitem.flex-row .flex-column.todo-content input[type=checkbox] {width: 1rem; height: 1rem;}
 label input, label textarea { margin: 0.25rem;}
+
+.more-button-wrapper { display: inline-flex;
+    position: relative; width: 2rem; height: 2rem; font-size: 1rem;}
+.more-button-wrapper>button { width:100%; height:100%; position: relative; }
+.more-button-wrapper [role=menu] {position: absolute;
+    left:0; top:var(--height); z-index: 1000;
+}
+
+[role=menu]:not(.opened) {
+    display: none;
+}
+[role=menu] {
+    background-color: var(--bg-section);
+    width:fit-content; box-shadow: 0 0 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+    border-radius: 0.5rem;
+}
+[role=menu]>[role=menuitem] {
+    padding: 0.5rem 1rem;
+}
+
+[role=menu]>[role=menuitem]:not(:last-child) {
+    border-bottom: solid 0.1rem color-mix(in srgb, var(--fg-txt), transparent 50%);
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact .field {display: grid; 
+    grid-template-columns: var(--columns); margin: 0.5rem 0;
+    grid-auto-rows: auto; width: var(--contact-width);
+    background-color: var(--bg-section);
+    padding: 1rem; border-radius: 0.5rem;
+}
+.contact .field .key {padding: 0.5rem 0.5rem; width: 40%; font-weight: bold; grid-column: 1;}
+.contact .field .value {padding: 0.5rem 0.5rem; grid-column: 2; width: 100%;}
+.contact .field .value [class^=fa] {margin-right: 1rem;}
+.contact .field .button { grid-column: 3/4; grid-row: 1 / span 4;}
+.contact .field .button>.more-button-wrapper{ width: 2.5rem; height: 2.5rem; }
+.contact .field .button>.more-button-wrapper > button{ width: 100%; height: 100%; border-radius:0.5rem; 
+background-color: transparent}

@@ -86,7 +86,6 @@ export default function ToDo(){
         }
         
         if(todos.list.length < savedList.length || todos.list.length == 0) {
-
             localStorage.setItem("todolist",JSON.stringify(todos.list.filter(s=>!s.isEditMode)));
             if(todos.list.length == 0 && didMount) {
                 timeout = setTimeout(()=>{

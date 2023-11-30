@@ -1,0 +1,11 @@
+{
+    "title":"목록형 위젯을 위한 조작 연속성",
+    "menuitem_delete":"삭제",
+    "menuitem_modify":"수정",
+    "key_name":"이름",
+    "key_gender":"성별",
+    "key_phone":"연락처",
+    "key_job":"직업",
+    "value_gender_0":"남자",
+    "value_gender_1":"여자"
+}
