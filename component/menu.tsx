@@ -1,8 +1,6 @@
-import { CSSProperties, CompositionEvent, Dispatch, KeyboardEventHandler, MouseEventHandler, MutableRefObject, PointerEventHandler, ReactComponentElement, ReactElement, RefObject, SetStateAction, cloneElement, forwardRef, useEffect, useRef, useState } from "react";
-import dynamic from "next/dynamic";
+import { CSSProperties, Dispatch, KeyboardEventHandler, MouseEventHandler, MutableRefObject, PointerEventHandler, ReactComponentElement, ReactElement, RefObject, SetStateAction, cloneElement, forwardRef, useEffect, useRef, useState } from "react";
 import IdentifierSerialGenerater from "../util/Identifier";
-import { useTranslation} from "react-i18next";
-import { i18n } from "next-i18next";
+import { UseTranslation, i18n} from "next-i18next";
 
 type DefaultMenuProps<T extends HTMLElement = HTMLDivElement> = {
     menuitem:MenuitemProps[]
