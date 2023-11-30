@@ -4,8 +4,6 @@ import type { AppProps } from 'next/app'
 import {appWithTranslation} from "next-i18next"
 import MainLayout from '../component/common.layout'
 import { ReactElement, ReactNode } from 'react'
-import Script from 'next/script'
-import Head from 'next/head'
 export type NextPageWithLayout <P = {}, IP=P> = NextPage<P,IP> & {
   getLayout?:(page:ReactElement) => ReactNode
 }

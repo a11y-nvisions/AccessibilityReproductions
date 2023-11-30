@@ -8,7 +8,7 @@ import setStaticProps from "../util/setStaticProps";
 
 type DummyContact = {name:string,age:number,gender:0|1,phoneNumber:string,job:string}
 
-export default function ListWidget() {
+export default function ListWidget({}){
     const { t } = useTranslation("listWidget");
     
     const [dummyData,setDummyData] = useState<DummyContact[]>([
@@ -34,7 +34,7 @@ export default function ListWidget() {
 }
 
 
-const ContactField = ({name,gender,job,phoneNumber}:DummyContact)=>{
+export const ContactField = ({name,gender,job,phoneNumber}:DummyContact)=>{
     const [opened,setOpened] = useState<boolean>(false);
     const [focused,setFocused] = useState<number>(0);
     const {t} = useTranslation("listWidget");
