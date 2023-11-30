@@ -2,7 +2,7 @@ import { CSSProperties, CompositionEvent, Dispatch, KeyboardEventHandler, MouseE
 import dynamic from "next/dynamic";
 import IdentifierSerialGenerater from "../util/Identifier";
 import { useTranslation} from "react-i18next";
-import setStaticProps from "../util/setStaticProps";
+import { i18n } from "next-i18next";
 
 type DefaultMenuProps<T extends HTMLElement = HTMLDivElement> = {
     menuitem:MenuitemProps[]
@@ -145,7 +145,7 @@ type MoreButtonProps = {
     menu:DefaultMenuProps<HTMLButtonElement>,
 }
 export function MoreButton({menu,label}:MoreButtonProps) {
-    const {t} = useTranslation("common");
+    
     const buttonRef = useRef<HTMLButtonElement>(null);
     const wrapperRef = useRef<HTMLDivElement>(null);
     const {opened,setOpened} = menu;
@@ -157,10 +157,10 @@ export function MoreButton({menu,label}:MoreButtonProps) {
     } as CSSProperties}>
         <button ref={buttonRef} onClick={()=>{
             setOpened(!opened);
-        }} aria-label={t("button_view-more",{name:label}).toString()}>
+        }} aria-label={i18n?.t("button_view-more",{name:label}).toString()}>
             <i className="fa-solid fa-ellipsis-vertical"></i>
             </button>
-        <Menu label={t("menu_more-option",{name:label}).toString()} {...menu} opened={opened} setOpened={setOpened} exit={buttonRef}></Menu>
+        <Menu label={i18n?.t("menu_more-option",{name:label}).toString()} {...menu} opened={opened} setOpened={setOpened} exit={buttonRef}></Menu>
     </div>
     )
 }
