@@ -5,9 +5,7 @@ import setStaticProps from "../util/setStaticProps";
 import TodoItem, { ToDoItemInterface,ToDoItemAction, ToDoItemData} from "../component/todoItem"
 
 function ToDoItemReducer(
-        state:{
-            list:ToDoItemData[]
-        },
+        state:{list:ToDoItemData[]},
         action:ToDoItemAction
     ):{
         list:ToDoItemData[]
@@ -29,6 +27,16 @@ function ToDoItemReducer(
                 const list = [...state.list];
                 if(list[action.payload.index]){
                     list[action.payload.index].isEditMode = true;
+                    return {list};
+                }
+                return state;
+            }
+            return state;
+        case "cancelItemModifying":
+            if (action.payload && typeof action.payload.index == "number" ){
+                const list = [...state.list];
+                if(list[action.payload.index]){
+                    list[action.payload.index].isEditMode = false;
                     return {list};
                 }
                 return state;

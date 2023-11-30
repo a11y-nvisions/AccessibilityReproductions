@@ -63,13 +63,12 @@ endDate,startDate}:ToDoItemInterface,ref)=>{
         dispatch({type:"modifyItem",payload:{
             index,
             isEditMode:true,
-        }})
+        }});
     }
     
     const requestFunc_cancel = ()=>{
-        dispatch({type:"modifyItem",payload:{
+        dispatch({type:"cancelItemModifying",payload:{
             index,
-            isEditMode:false,
         }});
     }
 
@@ -183,7 +182,9 @@ endDate,startDate}:ToDoItemInterface,ref)=>{
                     aria-describedby={`title_${id} content_${id}`}>
                         {t("label.button.modify")}
                     </button>}
-                    <button className="btn delete" onClick={ !isEditMode ? requestFunc_delete : isNewItem ? requestFunc_delete : requestFunc_cancel}
+                    <button className="btn delete" onClick={ !isEditMode ? requestFunc_delete : 
+                        isNewItem ? requestFunc_delete : requestFunc_cancel
+                    }
                         aria-label={`${isEditMode ? t("label.button.cancel") : t("label.button.delete")}`}
                         aria-describedby={ !isEditMode ? `title_${id} content_${id}` : undefined }>
                         {isEditMode ? t("label.button.cancel") : t("label.button.delete")}
