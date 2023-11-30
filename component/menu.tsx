@@ -1,6 +1,6 @@
 import { CSSProperties, Dispatch, KeyboardEventHandler, MouseEventHandler, MutableRefObject, PointerEventHandler, ReactComponentElement, ReactElement, RefObject, SetStateAction, cloneElement, forwardRef, useEffect, useRef, useState } from "react";
 import IdentifierSerialGenerater from "../util/Identifier";
-import { UseTranslation, i18n} from "next-i18next";
+import { UseTranslation, i18n, useTranslation} from "next-i18next";
 
 type DefaultMenuProps<T extends HTMLElement = HTMLDivElement> = {
     menuitem:MenuitemProps[]
@@ -143,7 +143,7 @@ type MoreButtonProps = {
     menu:DefaultMenuProps<HTMLButtonElement>,
 }
 export function MoreButton({menu,label}:MoreButtonProps) {
-    
+    const {t} = useTranslation("common")
     const buttonRef = useRef<HTMLButtonElement>(null);
     const wrapperRef = useRef<HTMLDivElement>(null);
     const {opened,setOpened} = menu;
@@ -155,10 +155,10 @@ export function MoreButton({menu,label}:MoreButtonProps) {
     } as CSSProperties}>
         <button ref={buttonRef} onClick={()=>{
             setOpened(!opened);
-        }} aria-label={i18n?.t("button_view-more",{name:label}).toString()}>
+        }} aria-label={t("button_view-more",{name:label}).toString()}>
             <i className="fa-solid fa-ellipsis-vertical"></i>
             </button>
-        <Menu label={i18n?.t("menu_more-option",{name:label}).toString()} {...menu} opened={opened} setOpened={setOpened} exit={buttonRef}></Menu>
+        <Menu label={t("menu_more-option",{name:label}).toString()} {...menu} opened={opened} setOpened={setOpened} exit={buttonRef}></Menu>
     </div>
     )
 }
